@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet><!--向tomcat报告，这个应用里有servlet，名字叫HelloServlet-->
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>com.myweb.servletdemo.HelloServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<!--注册servlet的映射，servletName，对应上面servlet-->
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/a</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>HelloWebTest</servlet-name>
+  	<servlet-class>com.myweb.test.HelloWebTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloWebTest</servlet-name>
+  	<url-pattern>/aa</url-pattern>
+  </servlet-mapping><servlet>
+  	<servlet-name>ServletTest01</servlet-name>
+  	<servlet-class>com.mywork.servlet.ServletTest01</servlet-class>
+  	
+  	<!-- 初始值配置 -->
+  	<init-param>
+  		<param-name>address</param-name>
+  		<param-value>zhengzhou</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>地址</param-name>
+  		<param-value>杭州</param-value>
+  	</init-param>
+  </servlet>
+  <!-- config 参数 -->
+  <servlet>
+  	<servlet-name>config</servlet-name>
+  	<servlet-class>com.myservlet.config.TestServletConfig</servlet-class>
+  	<init-param>
+  		<param-name>number</param-name>
+  		<param-value>333</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>config</servlet-name>
+  	<url-pattern>/config</url-pattern>
+  </servlet-mapping>
+  <!-- config 设置 -->
+  
+  
+  <servlet>
+  	<servlet-name>ServletTest02</servlet-name>
+  	<servlet-class>com.mywork.servlet.ServletTest02</servlet-class>
+  	<load-on-startup>3</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ServletTest01</servlet-name>
+  	<url-pattern>/a03</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet02</servlet-name>
+  	<url-pattern>/a02</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
